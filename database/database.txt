@@ -1,0 +1,18 @@
+drop database if exists appgastos;
+create database appgastos;
+use appgastos;
+
+CREATE TABLE gastos (
+  id_gasto INT PRIMARY KEY AUTO_INCREMENT, -- siempre PRIMARY KEY antes y AUTO_INCREMENT después
+  categoria VARCHAR(100) NOT NULL,
+  descripcion VARCHAR(255),
+  monto DECIMAL(10,2) NOT NULL,
+  fecha DATE DEFAULT (CURRENT_DATE),
+  hora TIME DEFAULT (CURRENT_TIME)
+);
+
+insert into gastos (categoria, descripcion, monto) values ('Alimentación','Almuerzo en la universidad',25.00);
+
+insert into gastos (categoria, descripcion, monto) values ('Salud','Ampollas',12.00);
+
+insert into gastos (categoria, descripcion, monto) values ('Transporte','Universidad a casa',3.50);
